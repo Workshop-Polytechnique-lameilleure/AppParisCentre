@@ -1,47 +1,30 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Meetings', function() {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+  var meetings = [{
+  id_meeting: "Se la coller à République",
+  latitude: 48.86751,
+  longitude: 2.363777,
+  participants: "Paul, Pierre, Jacques",
+  date: DateTime.new(2016,12,31,23,59,59)
+   }, {
+  id_meeting: "Tournée générale d'aspirine",
+  latitude: 48.852969,
+  longitude: 2.349873,
+  participants: "Jacqui Michel",
+  date: DateTime.new(2017,01,01,14,00,00)
   }];
 
   return {
     all: function() {
-      return chats;
+      return meetings;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    get: function(meetingId) {
+      for (var i = 0; i < meetings.length; i++) {
+        if (meetings[i].id === parseInt(meetingId)) {
+          return meetings[i];
         }
       }
       return null;
