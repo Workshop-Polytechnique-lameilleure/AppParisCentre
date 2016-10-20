@@ -1,1 +1,11 @@
-/* Empty. Add your own CSS if you like */
+/* Empty. Add your own CSS if you like */ img.logo { width: 30%; }
+
+.dashboard h2 { color: blue; }/* Empty. Add your own CSS if you like */
+  
+.background, .background .pane, .background .item, .background .item-complex {
+    background-color:#BBF0E9;
+}
+
+.background .item-content{
+  background-color:#FAFAFA;
+} 

@@ -1,6 +1,6 @@
-<ion-view view-title="Rendez-vous">
-  <ion-content>
-    <ion-list>
+<ion-view view-title="My meetings">
+  <ion-content class="padding background"> 
+
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id_meeting}}">
         <h2>{{meeting.id_meeting}}</h2>
         <p>{{meeting.participants}}</p>
