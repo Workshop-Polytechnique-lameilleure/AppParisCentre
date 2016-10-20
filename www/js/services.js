@@ -4,13 +4,17 @@ angular.module('starter.services', [])
   // Might use a resource here that returns a JSON array
 
   var meetings = [{
-  id_meeting: "Se la coller à République",
+  id: 1,
+  description : "Se la coller à République",
   latitude: 48.86751,
   longitude: 2.363777,
   participants: "Paul, Pierre, Jacques",
   date: "2016-11-10"
-   }, {
-  id_meeting: "Tournée générale d'aspirine",
+   }, 
+   {
+
+  id: 2,
+  description: "Tournée générale d'aspirine",
   latitude: 48.852969,
   longitude: 2.349873,
   participants: "Jacqui Michel",
