@@ -1,12 +1,17 @@
 <ion-view view-title="My meetings">
-  <ion-content class="padding background"> 
-
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id}}">
-        <h2>{{meeting.description}}</h2>
-        <p>{{meeting.participants}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-
-      </ion-item>
-    </ion-list>
+  <ion-content class="padding background">           
+          <div class="item">
+          <h2> Upcoming meetings </h2>
+          </div>
+       <div>   
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id}}">
+          <h2>{{meeting.description}}</h2>
+          <p>{{meeting.participants}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+          </ion-item>
+       </div>
+       <button class="button button-block button-positive button-dark icon left ion-paper-airplane" ng-click="openModal()" >
+       Create a new meeting
+       </button>
   </ion-content>
 </ion-view>

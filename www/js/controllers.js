@@ -6,8 +6,20 @@ angular.module('starter.controllers', [])
   $scope.meetings = Meetings.all();
 })
 
-.controller('MeetingDetailCtrl', function($scope, $stateParams, Meetings) {
+.controller('MeetingDetailCtrl', function($scope, $stateParams, $ionicModal,Meetings) {
   $scope.meeting = Meetings.get($stateParams.meetingId);
+  $ionicModal.fromTemplateUrl('templates/modal-book.html', {
+   scope: $scope,
+   animation: 'slide-in-up'
+}).then(function(modal) {
+  $scope.modal = modal;
+});  
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+    $scope.modal.hide();
+  };
 })
 
 .controller('AccountCtrl', function($scope) {
@@ -15,3 +27,5 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+
