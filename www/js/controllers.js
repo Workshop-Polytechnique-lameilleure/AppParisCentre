@@ -11,9 +11,9 @@ angular.module('starter.controllers', [])
   $ionicModal.fromTemplateUrl('templates/modal-book.html', {
    scope: $scope,
    animation: 'slide-in-up'
-}).then(function(modal) {
+ }).then(function(modal) {
   $scope.modal = modal;
-});  
+ });  
   $scope.openModal = function() {
     $scope.modal.show();
   };
@@ -21,6 +21,9 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 })
+
+.controller('NewMeetingCtrl', function($scope) {})
+
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
