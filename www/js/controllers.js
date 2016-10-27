@@ -3,7 +3,10 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope) {})
 
 .controller('MeetingsCtrl', function($scope, Meetings) {
-  $scope.meetings = Meetings.all();
+  $scope.meetings = [];
+   Meetings.all().then(function(apiMeetings) {
+    $scope.meetings = apiMeetings;
+  });
 })
 
 .controller('MeetingDetailCtrl', function($scope, $stateParams, $ionicModal,Meetings) {

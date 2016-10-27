@@ -1,30 +1,19 @@
 angular.module('starter.services', [])
 
-.factory('Meetings', function() {
+.factory('Meetings',function($http) {
   // Might use a resource here that returns a JSON array
 
-  var meetings = [{
-  id: 1,
-  description : "Se la coller à République",
-  latitude: 48.86751,
-  longitude: 2.363777,
-  participants: "Paul, Pierre, Jacques",
-  date: "2016-11-10"
-   }, 
-   {
-
-  id: 2,
-  description: "Tournée générale d'aspirine",
-  latitude: 48.852969,
-  longitude: 2.349873,
-  participants: "Jacqui Michel",
-  date: "2016-11-10"
-  }];
+  var meetings = []
 
   return {
     all: function() {
-      return meetings;
+      return $http.get("https://api-pariscentre.herokuapp.com/meetings.json")
+        .then(function(response) {
+          meetings = response.data;
+          return meetings;
+        })      
     },
+
     get: function(meetingId) {
       for (var i = 0; i < meetings.length; i++) {
         if (meetings[i].id === parseInt(meetingId)) {
