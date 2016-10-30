@@ -11,5 +11,12 @@
      <input type="text" ng-model="meeting.description">
      </label> 
     </div>
+
+  <label class="item item-input">
+    <span class="input-label">Select date </span>
+    <input type="date">
+  </label>
+
+  <ion-checkbox ng-repeat="users in users" ng-model="user.id"> {{user.name}} </ion-checkbox>
  </ion-content>
 </ion-modal-view>    
