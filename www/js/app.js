@@ -77,17 +77,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }  
-  })
-  
-  .state('tab.new-meeting', {
-    url: '/new-meeting',
-    views: {
-      'tab-new-meeting': {
-        templateUrl: 'templates/tab-new-meeting.html',
-        controller: 'NewMeetingCtrl'
-      }
-    }
   });
+  
+
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');

@@ -23,4 +23,20 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+
+.factory('Users',function($http) {
+  // Might use a resource here that returns a JSON array
+
+  var users = []
+
+  return {
+    all: function() {
+      return $http.get("https://api-pariscentre.herokuapp.com/users.json")
+        .then(function(response) {
+          users = response.data;
+          return users;
+        })      
+    },
+  };
+});    
