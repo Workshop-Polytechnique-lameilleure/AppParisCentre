@@ -17,6 +17,6 @@
     <input type="date">
   </label>
 
-  <ion-checkbox ng-repeat="users in users" ng-model="user.id"> {{user.name}} </ion-checkbox>
+  <ion-checkbox ng-repeat="users in users" ng-model="user.checked" ng-true-value="1" ng-false-value="0" ng-checked="user.checked == 1"> {{user.last_name}} {{user.first_name}} </ion-checkbox>
  </ion-content>
 </ion-modal-view>    
