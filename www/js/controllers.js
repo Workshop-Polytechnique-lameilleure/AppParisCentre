@@ -45,6 +45,16 @@ angular.module('starter.controllers', [])
   };
 })
 
+  $scope.createmeeting = function(last_name, first_name, address) {
+    return Meetings.createmeeting($stateParams.showId, last_name, first_name, address)
+    .then(function(creatingmeeting) {
+      console.log("Creating Meeting", creating meeting);
+      alert("Your meeting was created and its number is" + creatingmeeting.id);
+      $scope.closeModal();
+    })
+  }
+
+
 .controller('MeetingDetailCtrl', function($scope, $stateParams, $ionicModal, Meetings) {
   $scope.meeting = Meetings.get($stateParams.meetingId);
 })
