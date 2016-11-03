@@ -8,21 +8,24 @@
     <div class="item">
      <label class="item item-input">
      <span class="input-label"> Name of the meeting</span>
-     <input type="text" ng-model="meeting.description">
+     <input type="text" ng-model="description">
      </label> 
     </div>
 
   <label class="item item-input">
     <span class="input-label">Select date </span>
-    <input type="date">
+    <input type="date" ng-model="meetingDate">
   </label>
 
 
   <ion-checkbox ng-repeat="user in users" ng-model="user.checked" ng-true-value="1" ng-false-value="0" ng-checked="user.checked == 1"> {{user.first_name}} {{user.last_name}} </ion-checkbox>
 
-
-//créer bouton Create Meeting
-
+    <button class="button button-block button-positive button-dark icon left ion-compose">
+       Let's find out the best location
+    </button>
 
  </ion-content>
 </ion-modal-view>    
+
+ 
+ //une fois la fonction du controller et du service fonctionnelles il faut ajouter ng-click="createMeeting(description, users, meetingDate)" au button 

@@ -24,8 +24,8 @@ angular.module('starter.services', [])
     }
   };
 
-//create: function(name, date, selectedUsersIds) {
- // var data = {
+  //create: function(name, date, selectedUsersIds) {
+   // var data = {
     //"meeting":  {
       //"name": name,
       //"users": selectedUsersIds

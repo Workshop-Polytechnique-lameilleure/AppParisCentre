@@ -4,8 +4,7 @@
           <h2> Upcoming meetings </h2>
           </div>
        <div>   
-          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id}}">
-          <img ng-src="{{meeting.image}}">
+          <ion-item class="item-remove-animate item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id}}">
           <h2>{{meeting.name}}</h2>
           <p> With {{meeting.participants}}</p>
           <p>{{meeting.date}}</p>
