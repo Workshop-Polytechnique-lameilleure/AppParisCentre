@@ -21,11 +21,13 @@ angular.module('starter.controllers', [])
 
   $scope.createMeeting = function(name, users, date) {
      console.log("je suis dans createMeeting", name);
+
      var selectedUsers = users.filter(function(user){return user.checked ==1});
-   // var selectedUsersIds A FAIRE : je recupere les ids des users 
+     var selectedUserIds = selectedUsers.map(function(user){return user.id});
+     var dateFormatted = date + "T12:00:000Z";
   
 
-   //return Meetings.create(name, date, selectedUsersIds) //l'argument devra être selectedUsersIds à la place de selectedUsers
+   //return Meetings.create(name, dateFormatted, selectedUsersIds) 
     //.then(function(createdMeeting) {
      //console.log("Creating Meeting", creating meeting);
      //$scope.closeModal();

@@ -21,28 +21,26 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    }, 
+  //};
+
+    create: function(name, date, selectedUsersIds) {
+     var data = {
+       "meeting":  {
+         "name": name,
+         "users": selectedUsersIds
+        }
+      }
+   
+     return $http.post("https://api-pariscentre.herokuapp.com/meetings.json", data)
+     .then(function(response){
+       console.log("response", response);
+
+       createdMeeting = response.data;
+       return createdMeeting;
+     });
     }
   };
-
-  //create: function(name, date, selectedUsersIds) {
-   // var data = {
-    //"meeting":  {
-      //"name": name,
-      //"users": selectedUsersIds
-//}
-//return $hhtp.post("https:..., data)
- // .then"(function(response){
-  //console.log("response", response);
-
-  //createdMeeting = response.data;
-  //return createdMeeting;
-//});
-//}
-
-
-
-
-
 })
 
 .factory('Users',function($http) {
