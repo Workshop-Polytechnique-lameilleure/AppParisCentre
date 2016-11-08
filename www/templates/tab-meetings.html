@@ -6,7 +6,7 @@
        <div>   
           <ion-item class="item-remove-animate item-icon-right" ng-repeat="meeting in meetings" type="item-text-wrap" href="#/tab/meetings/{{meeting.id}}">
           <h2>{{meeting.name}}</h2>
-          <p> With {{meeting.users}}</p>
+          <p> With <span ng-repeat="user in meeting.users">{{user.first_name}} {{user.last_name}}, </span> </p>
           <p>{{meeting.date}}</p>
           <i class="icon ion-chevron-right icon-accessory"></i>
           </ion-item>
