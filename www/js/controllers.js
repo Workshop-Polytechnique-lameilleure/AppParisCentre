@@ -23,15 +23,16 @@ angular.module('starter.controllers', [])
      console.log("je suis dans createMeeting", name);
 
      var selectedUsers = users.filter(function(user){return user.checked ==1});
-     var selectedUserIds = selectedUsers.map(function(user){return user.id});
+     console.log("ce sont les selected users");
+     var selectedUsersIds = selectedUsers.map(function(user){return user.id});
      var dateFormatted = date + "T12:00:000Z";
+     console.log("date:", date);
   
 
    return Meetings.create(name, dateFormatted, selectedUsersIds) 
     .then(function(createdMeeting) {
-     console.log("Creating Meeting", Create);
-     // dans le console.log, quel est le 2e argument ?  create ou creating meeting ou Meetings.create ? Create meeting ne marche pas
-     //alert("We are looking for the best location for your meeting")
+     console.log("Creating Meeting", createdMeeting);
+     Meetings.all();
      $scope.closeModal();
     })
   }
