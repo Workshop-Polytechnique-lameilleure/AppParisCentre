@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $ionicModal, Meetings, Users) {
+.controller('DashCtrl', function($scope, $ionicModal, Meetings, Users, $state) {
   $scope.users = [];
    Users.all().then(function(apiUsers) {
     $scope.users = apiUsers;
@@ -32,9 +32,9 @@ angular.module('starter.controllers', [])
    return Meetings.create(name, dateFormatted, selectedUsersIds) 
     .then(function(createdMeeting) {
      console.log("Creating Meeting", createdMeeting);
-     alert("Votre meeting a été créé");
-     Meetings.all();
+     alert("Your meeting has been created. Go checkout the location !");
      $scope.closeModal();
+     $state.go('tab.meetings', {url: '/meetings'})
     })
   }
 })
@@ -58,18 +58,7 @@ angular.module('starter.controllers', [])
     $scope.users = apiUsers;
   });
 
-  $ionicModal.fromTemplateUrl('templates/new-meeting.html', {
-   scope: $scope,
-   animation: 'slide-in-up'
- }).then(function(modal) {
-  $scope.modal = modal;
- });  
-  $scope.openModal = function() {
-    $scope.modal.show();
-  };
-  $scope.closeModal = function() {
-    $scope.modal.hide();
-  };
+
 
 })
 
