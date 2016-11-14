@@ -28,7 +28,8 @@ angular.module('starter.services', [])
      var data = {
        "meeting":  {
          "name": name,
-         "users": selectedUsersIds
+         "date": date,
+         "users_id": selectedUsersIds
         }
       }
    

@@ -19,10 +19,10 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };  
 
-  $scope.createMeeting = function(name, users, date) {
+  $scope.createMeeting = function(name, users_id, date) {
      console.log("je suis dans createMeeting", name);
 
-     var selectedUsers = users.filter(function(user){return user.checked ==1});
+     var selectedUsers = users_id.filter(function(user){return user.checked ==1});
      console.log("ce sont les selected users");
      var selectedUsersIds = selectedUsers.map(function(user){return user.id});
      var dateFormatted = date + "T12:00:000Z";
