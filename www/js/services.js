@@ -26,11 +26,9 @@ angular.module('starter.services', [])
 
     create: function(name, date, selectedUsersIds) {
      var data = {
-       "meeting":  {
          "name": name,
          "date": date,
          "users_id": selectedUsersIds
-        }
       }
    
      return $http.post("https://api-pariscentre.herokuapp.com/meetings.json", data)
