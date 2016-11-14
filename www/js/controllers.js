@@ -32,6 +32,7 @@ angular.module('starter.controllers', [])
    return Meetings.create(name, dateFormatted, selectedUsersIds) 
     .then(function(createdMeeting) {
      console.log("Creating Meeting", createdMeeting);
+     alert("Votre meeting a été créé");
      Meetings.all();
      $scope.closeModal();
     })
@@ -39,7 +40,12 @@ angular.module('starter.controllers', [])
 })
 
 
-
+.controller('UsersCtrl', function($scope, Users) {
+  $scope.users = [];
+  Users.all().then(function(apiUsers) {
+    $scope.users = apiUsers;
+  });
+})
 
 .controller('MeetingsCtrl', function($scope, $ionicModal, Meetings, Users) {
   $scope.meetings = [];

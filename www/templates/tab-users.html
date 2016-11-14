@@ -1,0 +1,12 @@
+<ion-view view-title="Friends">
+  <ion-content class="padding background">           
+          <div class="header">
+          <h2> My list of friends </h2>
+          </div>
+       <div>   
+          <ion-item class="item-remove-animate item-icon-right" ng-repeat="user in users" type="item-text-wrap">
+          <h2>{{user.first_name}} {{user.last_name}}</h2>
+          </ion-item>
+       </div>
+  </ion-content>
+</ion-view>
