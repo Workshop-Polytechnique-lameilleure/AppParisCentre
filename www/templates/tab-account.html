@@ -3,14 +3,19 @@
     <ion-list>
   
           <h2> My Profile </h2>
-           <div class="item item-avatar">
+           <div class="item item-image">
 
 
     <img src="http://www.ammoland.com/wp-content/uploads/2015/07/Donald-Trump.jpg">
     <h3>Donald Trump</h3>
     <p>1600 Pennsylvania Ave NW, Washington, DC 20500, USA</p>
   </div>
-
+    <button class="button button-block button-balanced icon left ion-wrench" ng-click="openModal()">
+       Settings
+    </button>
+    <button class="button button-block button-assertive icon left ion-android-cancel" ng-click="openModal()">
+       Log out
+    </button>
     </ion-list>
   </ion-content>
 </ion-view>
